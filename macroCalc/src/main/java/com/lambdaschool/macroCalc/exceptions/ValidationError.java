@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.exceptions;
+package com.lambdaschool.macroCalc.exceptions;
 
 public class ValidationError
 {

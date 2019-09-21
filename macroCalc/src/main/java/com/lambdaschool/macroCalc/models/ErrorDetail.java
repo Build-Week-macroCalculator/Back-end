@@ -1,7 +1,7 @@
-package com.lambdaschool.starthere.models;
+package com.lambdaschool.macroCalc.models;
 
 
-import com.lambdaschool.starthere.exceptions.ValidationError;
+import com.lambdaschool.macroCalc.exceptions.ValidationError;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

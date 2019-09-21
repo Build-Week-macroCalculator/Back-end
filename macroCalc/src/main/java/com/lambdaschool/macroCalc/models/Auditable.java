@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.models;
+package com.lambdaschool.macroCalc.models;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;

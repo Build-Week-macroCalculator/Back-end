@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.services;
+package com.lambdaschool.macroCalc.services;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.core.Authentication;

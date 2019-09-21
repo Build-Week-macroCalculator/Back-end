@@ -1,6 +1,6 @@
-package com.lambdaschool.starthere.services;
+package com.lambdaschool.macroCalc.services;
 
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.macroCalc.models.Useremail;
 
 import java.util.List;
 

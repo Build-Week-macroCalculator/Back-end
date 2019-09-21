@@ -1,7 +1,7 @@
-package com.lambdaschool.starthere.controllers;
+package com.lambdaschool.macroCalc.controllers;
 
-import com.lambdaschool.starthere.models.Useremail;
-import com.lambdaschool.starthere.services.UseremailService;
+import com.lambdaschool.macroCalc.models.Useremail;
+import com.lambdaschool.macroCalc.services.UseremailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

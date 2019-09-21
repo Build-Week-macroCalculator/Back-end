@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.models;
+package com.lambdaschool.macroCalc.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

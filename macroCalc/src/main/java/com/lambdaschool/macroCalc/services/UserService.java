@@ -1,6 +1,6 @@
-package com.lambdaschool.starthere.services;
+package com.lambdaschool.macroCalc.services;
 
-import com.lambdaschool.starthere.models.User;
+import com.lambdaschool.macroCalc.models.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;

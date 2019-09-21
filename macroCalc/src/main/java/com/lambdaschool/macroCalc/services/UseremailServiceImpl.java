@@ -1,8 +1,8 @@
-package com.lambdaschool.starthere.services;
+package com.lambdaschool.macroCalc.services;
 
-import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
-import com.lambdaschool.starthere.models.Useremail;
-import com.lambdaschool.starthere.repository.UseremailRepository;
+import com.lambdaschool.macroCalc.exceptions.ResourceNotFoundException;
+import com.lambdaschool.macroCalc.models.Useremail;
+import com.lambdaschool.macroCalc.repository.UseremailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

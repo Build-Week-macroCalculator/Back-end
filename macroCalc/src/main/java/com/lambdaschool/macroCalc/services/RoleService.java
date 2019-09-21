@@ -1,6 +1,6 @@
-package com.lambdaschool.starthere.services;
+package com.lambdaschool.macroCalc.services;
 
-import com.lambdaschool.starthere.models.Role;
+import com.lambdaschool.macroCalc.models.Role;
 
 import java.util.List;
 
