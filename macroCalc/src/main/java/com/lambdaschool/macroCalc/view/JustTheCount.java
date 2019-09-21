@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.view;
+package com.lambdaschool.macroCalc.view;
 
 public interface JustTheCount
 {

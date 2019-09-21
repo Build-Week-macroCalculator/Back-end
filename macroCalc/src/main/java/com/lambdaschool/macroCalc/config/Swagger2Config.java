@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.config;
+package com.lambdaschool.macroCalc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

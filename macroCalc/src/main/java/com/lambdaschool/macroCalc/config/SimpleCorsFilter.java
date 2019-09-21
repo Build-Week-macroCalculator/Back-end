@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.config;
+package com.lambdaschool.macroCalc.config;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;

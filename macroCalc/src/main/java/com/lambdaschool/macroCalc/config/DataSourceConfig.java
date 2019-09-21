@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.config;
+package com.lambdaschool.macroCalc.config;
 
 import com.lambdaschool.starthere.StartHereApplication;
 import org.slf4j.Logger;

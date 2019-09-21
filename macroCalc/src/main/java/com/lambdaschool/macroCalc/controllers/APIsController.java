@@ -1,6 +1,6 @@
-package com.lambdaschool.starthere.controllers;
+package com.lambdaschool.macroCalc.controllers;
 
-import com.lambdaschool.starthere.models.APIOpenLibrary;
+import com.lambdaschool.macroCalc.models.APIOpenLibrary;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;

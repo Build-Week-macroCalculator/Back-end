@@ -1,6 +1,6 @@
-package com.lambdaschool.starthere.repository;
+package com.lambdaschool.macroCalc.repository;
 
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.macroCalc.models.Useremail;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.lambdaschool.starthere.controllers;
+package com.lambdaschool.macroCalc.controllers;
 
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.services.RoleService;
+import com.lambdaschool.macroCalc.models.Role;
+import com.lambdaschool.macroCalc.services.RoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

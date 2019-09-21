@@ -1,9 +1,9 @@
-package com.lambdaschool.starthere.handlers;
+package com.lambdaschool.macroCalc.handlers;
 
-import com.lambdaschool.starthere.exceptions.ResourceFoundException;
-import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
-import com.lambdaschool.starthere.exceptions.ValidationError;
-import com.lambdaschool.starthere.models.ErrorDetail;
+import com.lambdaschool.macroCalc.exceptions.ResourceFoundException;
+import com.lambdaschool.macroCalc.exceptions.ResourceNotFoundException;
+import com.lambdaschool.macroCalc.exceptions.ValidationError;
+import com.lambdaschool.macroCalc.models.ErrorDetail;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
