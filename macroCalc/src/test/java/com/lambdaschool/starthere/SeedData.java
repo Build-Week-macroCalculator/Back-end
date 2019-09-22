@@ -1,11 +1,11 @@
 package com.lambdaschool.starthere;
 
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
-import com.lambdaschool.starthere.services.RoleService;
-import com.lambdaschool.starthere.services.UserService;
+import com.lambdaschool.macroCalc.models.Role;
+import com.lambdaschool.macroCalc.models.User;
+import com.lambdaschool.macroCalc.models.UserRoles;
+import com.lambdaschool.macroCalc.models.Useremail;
+import com.lambdaschool.macroCalc.services.RoleService;
+import com.lambdaschool.macroCalc.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

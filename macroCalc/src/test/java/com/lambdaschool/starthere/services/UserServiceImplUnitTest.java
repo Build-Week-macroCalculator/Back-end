@@ -1,12 +1,13 @@
 package com.lambdaschool.starthere.services;
 
-import com.lambdaschool.starthere.StartHereApplication;
-import com.lambdaschool.starthere.exceptions.ResourceFoundException;
-import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
+import com.lambdaschool.macroCalc.StartHereApplication;
+import com.lambdaschool.macroCalc.exceptions.ResourceFoundException;
+import com.lambdaschool.macroCalc.exceptions.ResourceNotFoundException;
+import com.lambdaschool.macroCalc.models.Role;
+import com.lambdaschool.macroCalc.models.User;
+import com.lambdaschool.macroCalc.models.UserRoles;
+import com.lambdaschool.macroCalc.models.Useremail;
+import com.lambdaschool.macroCalc.services.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;

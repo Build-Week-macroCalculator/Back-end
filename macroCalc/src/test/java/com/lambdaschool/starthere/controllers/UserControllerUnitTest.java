@@ -1,11 +1,12 @@
 package com.lambdaschool.starthere.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lambdaschool.starthere.models.Role;
-import com.lambdaschool.starthere.models.User;
-import com.lambdaschool.starthere.models.UserRoles;
-import com.lambdaschool.starthere.models.Useremail;
-import com.lambdaschool.starthere.services.UserService;
+import com.lambdaschool.macroCalc.controllers.UserController;
+import com.lambdaschool.macroCalc.models.Role;
+import com.lambdaschool.macroCalc.models.User;
+import com.lambdaschool.macroCalc.models.UserRoles;
+import com.lambdaschool.macroCalc.models.Useremail;
+import com.lambdaschool.macroCalc.services.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
