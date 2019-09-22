@@ -2,10 +2,7 @@ package com.lambdaschool.macroCalc.services;
 
 import com.lambdaschool.macroCalc.exceptions.ResourceFoundException;
 import com.lambdaschool.macroCalc.exceptions.ResourceNotFoundException;
-import com.lambdaschool.macroCalc.models.Role;
-import com.lambdaschool.macroCalc.models.User;
-import com.lambdaschool.macroCalc.models.UserRoles;
-import com.lambdaschool.macroCalc.models.Useremail;
+import com.lambdaschool.macroCalc.models.*;
 import com.lambdaschool.macroCalc.repository.RoleRepository;
 import com.lambdaschool.macroCalc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,6 +104,11 @@ public class UserServiceImpl implements UserDetailsService, UserService
         {
             newUser.getUseremails()
                    .add(new Useremail(newUser, ue.getUseremail()));
+        }
+
+        for(Usermetrics um : user.getUsermetrics()) {
+            newUser.getUsermetrics()
+                    .add(new Usermetrics(newUser, um.getGender(), um.getAge(), um.getHeight(), um.getWeight(), um.getExercisefrequency(), um.getGoal()));
         }
 
         return userrepos.save(newUser);

@@ -33,13 +33,13 @@ public class Usermetrics extends Auditable {
     }
 
     public Usermetrics(User user, String gender, int age, String height, int weight, String exercisefrequency, String goal) {
-        this.user = user;
         this.gender = gender;
         this.age = age;
         this.height = height;
         this.weight = weight;
         this.exercisefrequency = exercisefrequency;
         this.goal = goal;
+        this.user = user;
     }
 
 
