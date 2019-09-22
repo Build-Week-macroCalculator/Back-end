@@ -62,8 +62,19 @@ public class UsermetricsServiceImpl implements UsermetricsService {
     }
 
     @Override
-    public Usermetrics save(Usermetrics todo) {
-        return null;
+    public Usermetrics save(Usermetrics usermetrics) {
+        Authentication authentication = SecurityContextHolder.getContext()
+                .getAuthentication();
+
+        if (usermetrics.getUser()
+                .getUsername()
+                .equalsIgnoreCase(authentication.getName()))
+        {
+            return usermetricsrepo.save(usermetrics);
+        } else
+        {
+            throw new ResourceNotFoundException((authentication.getName() + "not authorized to make change"));
+        }
     }
 
 }
