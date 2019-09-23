@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
@@ -62,49 +63,17 @@ public class UsermetricsServiceImpl implements UsermetricsService {
         }
     }
 
+    @Transactional
     @Override
-    public Usermetrics save(Usermetrics usermetrics) {
-        Authentication authentication = SecurityContextHolder.getContext()
-                .getAuthentication();
-
-        if (usermetrics.getUser()
-                .getUsername()
-                .equalsIgnoreCase(authentication.getName()))
+    public Usermetrics save(Usermetrics usermetrics)
+    {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (usermetrics.getUser().getUsername().equalsIgnoreCase(authentication.getName()))
         {
-            Usermetrics data=new Usermetrics();
-            if (usermetrics.getGender() != null) {
-                data.setGender(usermetrics.getGender());
-            }
-
-            if (usermetrics.getAge() != null) {
-                data.setAge(usermetrics.getAge());
-            }
-
-            if (usermetrics.getHeight() != null) {
-                data.setHeight(usermetrics.getHeight());
-            }
-
-            if (usermetrics.getWeight() != null) {
-                data.setWeight(usermetrics.getWeight());
-            }
-
-            if (usermetrics.getExercisefrequency() != null) {
-                data.setExercisefrequency(usermetrics.getExercisefrequency());
-            }
-
-            if (usermetrics.getGoal() != null) {
-                data.setGoal(usermetrics.getGoal());
-            }
-
-            if (usermetrics.getMeals() != null) {
-                data.setMeals(usermetrics.getMeals());
-            }
-
-            return usermetricsrepo.save(data);
-        }
-        else
+            return usermetricsrepo.save(usermetrics);
+        } else
         {
-            throw new ResourceNotFoundException((authentication.getName() + "not authorized to make change"));
+            throw new EntityNotFoundException(usermetrics.getUser().getUsername() + " != " + authentication.getName());
         }
     }
 
