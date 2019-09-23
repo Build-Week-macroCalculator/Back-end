@@ -30,7 +30,7 @@ public class DataSourceConfig
         if (System.getenv(envvar) == null)
         {
             logger.error("Environment Variable " + envvar + " missing");
-            stop = true;
+            //stop = true;
         }
     }
 
