@@ -100,12 +100,6 @@ public class UserServiceImpl implements UserDetailsService, UserService
         }
         newUser.setUserroles(newRoles);
 
-        for (Useremail ue : user.getUseremails())
-        {
-            newUser.getUseremails()
-                   .add(new Useremail(newUser, ue.getUseremail()));
-        }
-
         for(Usermetrics um : user.getUsermetrics()) {
             newUser.getUsermetrics()
                     .add(new Usermetrics(newUser, um.getGender(), um.getAge(), um.getHeight(), um.getWeight(), um.getExercisefrequency(), um.getGoal(), um.getMeals()));
@@ -139,16 +133,6 @@ public class UserServiceImpl implements UserDetailsService, UserService
                     .size() > 0)
             {
                 throw new ResourceFoundException("User Roles are not updated through User");
-            }
-
-            if (user.getUseremails()
-                    .size() > 0)
-            {
-                for (Useremail ue : user.getUseremails())
-                {
-                    currentUser.getUseremails()
-                               .add(new Useremail(currentUser, ue.getUseremail()));
-                }
             }
 
             return userrepos.save(currentUser);

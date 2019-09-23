@@ -38,11 +38,6 @@ public class SeedData implements CommandLineRunner
         admins.add(new UserRoles(new User(), r2));
         admins.add(new UserRoles(new User(), r3));
         User u1 = new User("admin", "password", admins);
-        u1.getUseremails()
-                .add(new Useremail(u1, "testtesttest@test.com"));
-        u1.getUsermetrics()
-                .add(new Usermetrics(u1, "male", 25, "72", 210, "1-2 per week", "Lose weight moderately", "3 meals a day"));
-
         userService.save(u1);
 
         // data, user
@@ -50,20 +45,12 @@ public class SeedData implements CommandLineRunner
         datas.add(new UserRoles(new User(), r3));
         datas.add(new UserRoles(new User(), r2));
         User u2 = new User("cinnamon", "1234567", datas);
-        u2.getUseremails()
-                .add(new Useremail(u2, "cinnamon@mymail.local"));
-        u2.getUseremails()
-                .add(new Useremail(u2, "hops@mymail.local"));
-        u2.getUseremails()
-                .add(new Useremail(u2, "bunny@email.local"));
         userService.save(u2);
 
         // user
         ArrayList<UserRoles> users = new ArrayList<>();
         users.add(new UserRoles(new User(), r2));
         User u3 = new User("barnbarn", "ILuvM4th!", users);
-        u3.getUseremails()
-                .add(new Useremail(u3, "barnbarn@email.local"));
         userService.save(u3);
 
         users = new ArrayList<>();
@@ -74,6 +61,8 @@ public class SeedData implements CommandLineRunner
         users = new ArrayList<>();
         users.add(new UserRoles(new User(), r2));
         User u5 = new User("Jane", "password", users);
+        u5.getUsermetrics()
+                .add(new Usermetrics(u1, "male", 25, "72", 210, "1-2 per week", "Lose weight moderately", "3 meals a day"));
         userService.save(u5);
     }
 }
