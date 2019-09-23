@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,4 +78,38 @@ public class UsermetricsServiceImpl implements UsermetricsService {
         }
     }
 
+    @Override
+    public Usermetrics update(Usermetrics usermetrics, long id) {
+        Usermetrics newMetrics = usermetricsrepo.findById(id).orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
+
+        if (usermetrics.getGender() != null) {
+            newMetrics.setGender(usermetrics.getGender());
+        }
+
+        if (usermetrics.getAge() != null) {
+            newMetrics.setAge(usermetrics.getAge());
+        }
+
+        if (usermetrics.getHeight() != null) {
+            newMetrics.setHeight(usermetrics.getHeight());
+        }
+
+        if (usermetrics.getWeight() != null) {
+            newMetrics.setWeight(usermetrics.getWeight());
+        }
+
+        if (usermetrics.getExercisefrequency() != null) {
+            newMetrics.setExercisefrequency(usermetrics.getExercisefrequency());
+        }
+
+        if (usermetrics.getGoal() != null) {
+            newMetrics.setGoal(usermetrics.getGoal());
+        }
+
+        if (usermetrics.getMeals() != null) {
+            newMetrics.setMeals(usermetrics.getMeals());
+        }
+
+        return usermetricsrepo.save(newMetrics);
+    }
 }

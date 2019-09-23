@@ -41,7 +41,7 @@ public class SeedData implements CommandLineRunner
         u1.getUseremails()
                 .add(new Useremail(u1, "testtesttest@test.com"));
         u1.getUsermetrics()
-                .add(new Usermetrics(u1, "male", 25, "72", 210, "1-2 per week", "Lose weight moderately"));
+                .add(new Usermetrics(u1, "male", 25, "72", 210, "1-2 per week", "Lose weight moderately", "3 meals a day"));
 
         userService.save(u1);
 

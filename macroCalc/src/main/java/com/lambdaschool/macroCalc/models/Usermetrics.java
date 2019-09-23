@@ -14,15 +14,17 @@ public class Usermetrics extends Auditable {
 
     private String gender;
 
-    private int age;
+    private Integer age;
 
     private String height;
 
-    private int weight;
+    private Integer weight;
 
     private String exercisefrequency;
 
     private String goal;
+
+    private String meals;
 
     @ManyToOne
     @JoinColumn(name = "userid", nullable = false)
@@ -32,7 +34,7 @@ public class Usermetrics extends Auditable {
     public Usermetrics() {
     }
 
-    public Usermetrics(User user, String gender, int age, String height, int weight, String exercisefrequency, String goal) {
+    public Usermetrics(User user, String gender, int age, String height, int weight, String exercisefrequency, String goal, String meals) {
         this.gender = gender;
         this.age = age;
         this.height = height;
@@ -40,6 +42,7 @@ public class Usermetrics extends Auditable {
         this.exercisefrequency = exercisefrequency;
         this.goal = goal;
         this.user = user;
+        this.meals = meals;
     }
 
 
@@ -59,11 +62,11 @@ public class Usermetrics extends Auditable {
         this.gender = gender;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -75,11 +78,11 @@ public class Usermetrics extends Auditable {
         this.height = height;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
@@ -105,5 +108,13 @@ public class Usermetrics extends Auditable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getMeals() {
+        return meals;
+    }
+
+    public void setMeals(String meals) {
+        this.meals = meals;
     }
 }
