@@ -5,7 +5,6 @@ import com.lambdaschool.macroCalc.controllers.UserController;
 import com.lambdaschool.macroCalc.models.Role;
 import com.lambdaschool.macroCalc.models.User;
 import com.lambdaschool.macroCalc.models.UserRoles;
-import com.lambdaschool.macroCalc.models.Useremail;
 import com.lambdaschool.macroCalc.services.UserService;
 import org.junit.After;
 import org.junit.Before;
@@ -63,14 +62,6 @@ public class UserControllerUnitTest
         admins.add(new UserRoles(new User(), r3));
         User u1 = new User("admin", "ILuvM4th!", admins);
 
-        u1.getUseremails()
-          .add(new Useremail(u1, "admin@email.local"));
-        u1.getUseremails().get(0).setUseremailid(10);
-
-        u1.getUseremails()
-          .add(new Useremail(u1, "admin@mymail.local"));
-        u1.getUseremails().get(1).setUseremailid(11);
-
         u1.setUserid(101);
         userList.add(u1);
 
@@ -80,18 +71,6 @@ public class UserControllerUnitTest
         datas.add(new UserRoles(new User(), r2));
         User u2 = new User("cinnamon", "1234567", datas);
 
-        u2.getUseremails()
-          .add(new Useremail(u2, "cinnamon@mymail.local"));
-        u2.getUseremails().get(0).setUseremailid(20);
-
-        u2.getUseremails()
-          .add(new Useremail(u2, "hops@mymail.local"));
-        u2.getUseremails().get(1).setUseremailid(21);
-
-        u2.getUseremails()
-          .add(new Useremail(u2, "bunny@email.local"));
-        u2.getUseremails().get(2).setUseremailid(22);
-
         u2.setUserid(102);
         userList.add(u2);
 
@@ -99,10 +78,6 @@ public class UserControllerUnitTest
         ArrayList<UserRoles> users = new ArrayList<>();
         users.add(new UserRoles(new User(), r1));
         User u3 = new User("testingbarn", "ILuvM4th!", users);
-
-        u3.getUseremails()
-          .add(new Useremail(u3, "barnbarn@email.local"));
-        u3.getUseremails().get(0).setUseremailid(30);
 
         u3.setUserid(103);
         userList.add(u3);
@@ -227,13 +202,11 @@ public class UserControllerUnitTest
 
         // build a restaurant
         ArrayList<UserRoles> thisRole = new ArrayList<>();
-        ArrayList<Useremail> thisEmail = new ArrayList<>();
         User u1 = new User();
         u1.setUserid(100);
         u1.setUsername("tiger");
         u1.setPassword("ILuvM4th!");
         u1.setUserroles(thisRole);
-        u1.setUseremails(thisEmail);
 
         ObjectMapper mapper = new ObjectMapper();
         String userString = mapper.writeValueAsString(u1);
@@ -254,7 +227,6 @@ public class UserControllerUnitTest
 
         // build a restaurant
         ArrayList<UserRoles> thisRole = new ArrayList<>();
-        ArrayList<Useremail> thisEmail = new ArrayList<>();
         User u1 = new User();
         u1.setUserid(100);
         u1.setUsername("tigerUpdated");

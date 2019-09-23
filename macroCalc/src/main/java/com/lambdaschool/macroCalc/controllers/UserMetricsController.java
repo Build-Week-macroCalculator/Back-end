@@ -24,8 +24,10 @@ public class UserMetricsController {
     @Autowired
     private UserService userservice;
 
+    // GET /users/mine
+
     // POST /usermetrics/{username}
-    @PostMapping(value = "/usermetrics/{username}", consumes = {"application/json"}, produces = {"application/json"})
+    @PostMapping(value = "/usermetrics/add/{username}", consumes = {"application/json"}, produces = {"application/json"})
     public ResponseEntity<?> addUserMetricsByUserName(@PathVariable String username, @Valid @RequestBody Usermetrics newMetrics){
         newMetrics.setUser(userservice.findByName(username));
         newMetrics = usermetricsService.save(newMetrics);
@@ -36,9 +38,16 @@ public class UserMetricsController {
     }
 
     // PUT /usermetrics/{usermetricsid}
-    @PutMapping(value = "/usermetrics/{usermetricsid}")
+    @PutMapping(value = "/usermetrics/edit/{usermetricsid}")
     public ResponseEntity<?> updateMetrics(@RequestBody Usermetrics usermetrics, @PathVariable long usermetricsid) {
         usermetricsService.update(usermetrics, usermetricsid);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>("User Metrics Edited", HttpStatus.OK);
+    }
+
+    //DELETE /usermetrics/{usermetricsid}
+    @DeleteMapping(value = "/usermetrics/delete/{usermetricsid}")
+    public ResponseEntity<?> deleteMetrics(@PathVariable long usermetricsid) {
+        usermetricsService.delete(usermetricsid);
+        return new ResponseEntity<>("User Metrics Deleted", HttpStatus.OK);
     }
 }
