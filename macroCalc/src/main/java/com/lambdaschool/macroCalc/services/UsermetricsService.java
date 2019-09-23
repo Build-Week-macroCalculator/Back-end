@@ -15,4 +15,5 @@ public interface UsermetricsService {
 
     Usermetrics save(Usermetrics todo);
 
+    Usermetrics update(Usermetrics usermetrics, long id);
 }

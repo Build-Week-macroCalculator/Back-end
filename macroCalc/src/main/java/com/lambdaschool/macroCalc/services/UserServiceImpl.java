@@ -108,7 +108,7 @@ public class UserServiceImpl implements UserDetailsService, UserService
 
         for(Usermetrics um : user.getUsermetrics()) {
             newUser.getUsermetrics()
-                    .add(new Usermetrics(newUser, um.getGender(), um.getAge(), um.getHeight(), um.getWeight(), um.getExercisefrequency(), um.getGoal()));
+                    .add(new Usermetrics(newUser, um.getGender(), um.getAge(), um.getHeight(), um.getWeight(), um.getExercisefrequency(), um.getGoal(), um.getMeals()));
         }
 
         return userrepos.save(newUser);
