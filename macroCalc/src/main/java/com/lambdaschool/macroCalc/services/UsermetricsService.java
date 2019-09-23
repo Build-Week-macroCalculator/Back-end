@@ -13,7 +13,7 @@ public interface UsermetricsService {
 
     void delete(long id);
 
-    Usermetrics save(Usermetrics todo);
+    Usermetrics save(Usermetrics usermetrics);
 
     Usermetrics update(Usermetrics usermetrics, long id);
 }

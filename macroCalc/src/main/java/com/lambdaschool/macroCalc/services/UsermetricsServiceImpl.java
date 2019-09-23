@@ -71,8 +71,38 @@ public class UsermetricsServiceImpl implements UsermetricsService {
                 .getUsername()
                 .equalsIgnoreCase(authentication.getName()))
         {
-            return usermetricsrepo.save(usermetrics);
-        } else
+            Usermetrics data=new Usermetrics();
+            if (usermetrics.getGender() != null) {
+                data.setGender(usermetrics.getGender());
+            }
+
+            if (usermetrics.getAge() != null) {
+                data.setAge(usermetrics.getAge());
+            }
+
+            if (usermetrics.getHeight() != null) {
+                data.setHeight(usermetrics.getHeight());
+            }
+
+            if (usermetrics.getWeight() != null) {
+                data.setWeight(usermetrics.getWeight());
+            }
+
+            if (usermetrics.getExercisefrequency() != null) {
+                data.setExercisefrequency(usermetrics.getExercisefrequency());
+            }
+
+            if (usermetrics.getGoal() != null) {
+                data.setGoal(usermetrics.getGoal());
+            }
+
+            if (usermetrics.getMeals() != null) {
+                data.setMeals(usermetrics.getMeals());
+            }
+
+            return usermetricsrepo.save(data);
+        }
+        else
         {
             throw new ResourceNotFoundException((authentication.getName() + "not authorized to make change"));
         }
