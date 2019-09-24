@@ -71,7 +71,7 @@ Pass into the request header:
 
 Authorization: TOKEN GOES HERE 
 
-with your token replacing the capitalized placeholder.
+with your token replacing the capitalized placeholder. Remember to align the key names of the metrics with how they are represented above in the metrics model.
 
 ### HTTP request headers
 
