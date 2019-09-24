@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **goal** | **string** |  | [optional] [default to null]
 **height** | **string** |  | [optional] [default to null]
 **meals** | **string** |  | [optional] [default to null]
-**user** | [**User**](User.md) |  | [optional] [default to null]
+**user** | [**User**] |  | [optional] [default to null]
 **usermetricsid** | **integer** |  | [optional] [default to null]
 **weight** | **integer** |  | [optional] [default to null]
 
