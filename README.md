@@ -1,10 +1,8 @@
-# Macro Calculator README
-
 # Welcome to the Macro Calculator. Please continue reading for instructions on how to access various endpoints.
 
-# UserMetricsControllerApi
 
-All URIs are relative to **
+
+# UserMetricsControllerApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
