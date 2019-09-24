@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 ## **Add New User - POST**
 
-Sign up a new user with this endpoint. Upon successful submission, reroute to login to receive your token.
+Sign up a new user with this endpoint. Upon successful submission, reroute to login to receive your token. Pass in the username and passwords with the keys "username" and "password" respectively.
 
 ### HTTP request headers
 
@@ -48,6 +48,28 @@ Sign up a new user with this endpoint. Upon successful submission, reroute to lo
 Sign in with your user profile. 
 
 **IMPORTANT, PLEASE READ**: this application uses OAuth2. In order to receive your token, you will have to send an additional client ID and secret in the request header. Upon logging in and receiving your token, you will have to send your token labeled as "Bearer" to hit endpoints.
+
+In the request body, pass in: 
+
+grant_type=password&username=USERNAME&password=PASSWORD 
+
+with your username and password replacing the capitalized placeholders.
+
+In the request header, pass in: 
+
+Authorization: PROTECTED FROM PUBLIC EYE,
+"Content-Type": "application/x-www-form-urlencoded"
+
+with the authorization representing the OAUTH id and secret in Base64 encoding, and the content type represnting the encoding type.
+
+
+**FOR ALL OTHER ENDPOINTS**
+
+Pass into the request header:
+
+Authorization: TOKEN GOES HERE 
+
+with your token replacing the capitalized placeholder.
 
 ### HTTP request headers
 
