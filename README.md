@@ -6,95 +6,33 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserMetricsByUserNameUsingPOST**](UserMetricsControllerApi.md#addUserMetricsByUserNameUsingPOST) | **POST** /usermetrics/add/{username} | addUserMetricsByUserName
-[**deleteMetricsUsingDELETE**](UserMetricsControllerApi.md#deleteMetricsUsingDELETE) | **DELETE** /usermetrics/delete/{usermetricsid} | deleteMetrics
-[**updateMetricsUsingPUT**](UserMetricsControllerApi.md#updateMetricsUsingPUT) | **PUT** /usermetrics/edit/{usermetricsid} | updateMetrics
+[**Add User Metrics By UserName - POST**](UserMetricsControllerApi.md#addUserMetricsByUserNameUsingPOST) | **POST** https://buildweek-macrocalc.herokuapp.com//usermetrics/add/{username} | addUserMetricsByUserName
+[**Delete User Metrics By User Metrics ID - DELETE**](UserMetricsControllerApi.md#deleteMetricsUsingDELETE) | **DELETE** https://buildweek-macrocalc.herokuapp.com//usermetrics/delete/{usermetricsid} | deleteMetrics
+[**Update User Metrics By User Metrics ID - PUT**](UserMetricsControllerApi.md#updateMetricsUsingPUT) | **PUT** https://buildweek-macrocalc.herokuapp.com//usermetrics/edit/{usermetricsid} | updateMetrics
 
 
-## **addUserMetricsByUserNameUsingPOST**
+## **Add User Metrics By UserName - POST**
 
-addUserMetricsByUserName
-
-### Example
-```bash
- addUserMetricsByUserNameUsingPOST username=value
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **newMetrics** | [**Usermetrics**](Usermetrics.md) | newMetrics |
- **username** | **string** | username |
-
-### Return type
-
-**map**
-
-### Authorization
-
-No authorization required
+Use this endpoint to add a new set of metrics to a user that currently has no metrics. Pass in the username with your request, and you will add the metrics to the user profile. **IMPORTANT** - only use this endpoint for a user that currently has NO metrics attached. For editing a user's metrics, use PUT (instructions below).
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+## **Delete User Metrics By User Metrics ID - DELETE**
 
-## **deleteMetricsUsingDELETE**
-
-deleteMetrics
-
-### Example
-```bash
- deleteMetricsUsingDELETE usermetricsid=value
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **usermetricsid** | **integer** | usermetricsid |
-
-### Return type
-
-**map**
-
-### Authorization
-
-No authorization required
+Use this endpoint to delete the full set of metrics from a user. This will return the user to a state with no metrics. If you delete a full set of metrics, you will then have to POST to add a new set of metrics.
 
 ### HTTP request headers
 
  - **Content-Type**: Not Applicable
  - **Accept**: */*
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+## **Update User Metrics By User Metrics ID - PUT**
 
-## **updateMetricsUsingPUT**
+Use this endpoint to EDIT user metrics.
 
-updateMetrics
-
-### Example
-```bash
- updateMetricsUsingPUT usermetricsid=value
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **usermetrics** | [**Usermetrics**](Usermetrics.md) | usermetrics |
- **usermetricsid** | **integer** | usermetricsid |
-
-### Return type
-
-**map**
-
-### Authorization
-
-No authorization required
 
 ### HTTP request headers
 
