@@ -2,9 +2,9 @@
 
 
 
-# Macro Calculator API
+## Macro Calculator API
 
-# User Metrics Schema (attached to the user object, accessed by the GET listed below)
+### User Metrics Schema (attached to the user object, accessed by the GET listed below)
 
 ## Properties
 Name | Type | Description | Notes
