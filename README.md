@@ -2,7 +2,24 @@
 
 
 
-# UserMetricsControllerApi
+# Macro Calculator API
+
+# User Metrics Schema (attached to the user object, accessed by the GET listed below)
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**age** | **integer** |  | [optional] [default to null]
+**exercisefrequency** | **string** |  | [optional] [default to null]
+**gender** | **string** |  | [optional] [default to null]
+**goal** | **string** |  | [optional] [default to null]
+**height** | **string** |  | [optional] [default to null]
+**meals** | **string** |  | [optional] [default to null]
+**user** | [**User**](User.md) |  | [optional] [default to null]
+**usermetricsid** | **integer** |  | [optional] [default to null]
+**weight** | **integer** |  | [optional] [default to null]
+
+
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
