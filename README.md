@@ -4,7 +4,7 @@
 
 ## Macro Calculator API
 
-### User Metrics Schema (attached to the user object, accessed by the GET listed below)
+**User Metrics Schema (attached to the user object, accessed by the GET listed below)
 
 ## Properties
 Name | Type | Description | Notes
@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **usermetricsid** | **integer** |  | [optional] [default to null]
 **weight** | **integer** |  | [optional] [default to null]
 
+
+**User Metrics Endpoints
 
 
 Method | HTTP request | Description
