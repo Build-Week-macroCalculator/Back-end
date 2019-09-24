@@ -6,9 +6,44 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Add User Metrics By UserName - POST**](UserMetricsControllerApi.md#addUserMetricsByUserNameUsingPOST) | **POST** https://buildweek-macrocalc.herokuapp.com//usermetrics/add/{username} | addUserMetricsByUserName
-[**Delete User Metrics By User Metrics ID - DELETE**](UserMetricsControllerApi.md#deleteMetricsUsingDELETE) | **DELETE** https://buildweek-macrocalc.herokuapp.com//usermetrics/delete/{usermetricsid} | deleteMetrics
-[**Update User Metrics By User Metrics ID - PUT**](UserMetricsControllerApi.md#updateMetricsUsingPUT) | **PUT** https://buildweek-macrocalc.herokuapp.com//usermetrics/edit/{usermetricsid} | updateMetrics
+[**Add New User - POST**](OpenControllerApi.md#addNewUserUsingPOST) | **POST** https://buildweek-macrocalc.herokuapp.com/createnewuser | addNewUser
+[**Sign In - POST**]| **POST** https://buildweek-macrocalc.herokuapp.com/login | signIn
+[**Get User By Name - GET**](UserControllerApi.md#getUserByNameUsingGET) | **GET** https://buildweek-macrocalc.herokuapp.com/users/username/{userName} | getUserByName
+[**Add User Metrics By UserName - POST**](UserMetricsControllerApi.md#addUserMetricsByUserNameUsingPOST) | **POST** https://buildweek-macrocalc.herokuapp.com/usermetrics/add/{username} | addUserMetricsByUserName
+[**Delete User Metrics By User Metrics ID - DELETE**](UserMetricsControllerApi.md#deleteMetricsUsingDELETE) | **DELETE** https://buildweek-macrocalc.herokuapp.com/usermetrics/delete/{usermetricsid} | deleteMetrics
+[**Update User Metrics By User Metrics ID - PUT**](UserMetricsControllerApi.md#updateMetricsUsingPUT) | **PUT** https://buildweek-macrocalc.herokuapp.com/usermetrics/edit/{usermetricsid} | updateMetrics
+
+
+## **Add New User - POST**
+
+Sign up a new user with this endpoint. Upon successful submission, reroute to login to receive your token.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+ 
+ 
+ ## **Sign In - POST**
+
+Sign in with your user profile. 
+
+**IMPORTANT, PLEASE READ**: this application uses OAuth2. In order to receive your token, you will have to send an additional client ID and secret in the request header. Upon logging in and receiving your token, you will have to send your token labeled as "Bearer" to hit endpoints.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+ 
+
+## **Get User By Name - GET**
+
+Use this endpoint to access the full user object, including user id, user name, and the full list of user metrics. Pass in the username as a param upon logging in, and use the return object to generate the application's content.
+
+### HTTP request headers
+
+ - **Content-Type**: Not Applicable
+ - **Accept**: application/json
 
 
 ## **Add User Metrics By UserName - POST**
@@ -19,6 +54,7 @@ Use this endpoint to add a new set of metrics to a user that currently has no me
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+ 
 
 ## **Delete User Metrics By User Metrics ID - DELETE**
 
@@ -28,6 +64,7 @@ Use this endpoint to delete the full set of metrics from a user. This will retur
 
  - **Content-Type**: Not Applicable
  - **Accept**: */*
+ 
 
 ## **Update User Metrics By User Metrics ID - PUT**
 
