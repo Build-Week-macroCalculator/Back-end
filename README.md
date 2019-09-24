@@ -6,12 +6,12 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Add New User - POST**](OpenControllerApi.md#addNewUserUsingPOST) | **POST** https://buildweek-macrocalc.herokuapp.com/createnewuser | addNewUser
-[**Sign In - POST**]| **POST** https://buildweek-macrocalc.herokuapp.com/login | signIn
-[**Get User By Name - GET**](UserControllerApi.md#getUserByNameUsingGET) | **GET** https://buildweek-macrocalc.herokuapp.com/users/username/{userName} | getUserByName
-[**Add User Metrics By UserName - POST**](UserMetricsControllerApi.md#addUserMetricsByUserNameUsingPOST) | **POST** https://buildweek-macrocalc.herokuapp.com/usermetrics/add/{username} | addUserMetricsByUserName
-[**Delete User Metrics By User Metrics ID - DELETE**](UserMetricsControllerApi.md#deleteMetricsUsingDELETE) | **DELETE** https://buildweek-macrocalc.herokuapp.com/usermetrics/delete/{usermetricsid} | deleteMetrics
-[**Update User Metrics By User Metrics ID - PUT**](UserMetricsControllerApi.md#updateMetricsUsingPUT) | **PUT** https://buildweek-macrocalc.herokuapp.com/usermetrics/edit/{usermetricsid} | updateMetrics
+[**Add New User - POST**] | **POST** https://buildweek-macrocalc.herokuapp.com/createnewuser | addNewUser
+[**Sign In - POST**] | **POST** https://buildweek-macrocalc.herokuapp.com/login | signIn
+[**Get User By Name - GET**] | **GET** https://buildweek-macrocalc.herokuapp.com/users/username/{userName} | getUserByName
+[**Add User Metrics By UserName - POST**] | **POST** https://buildweek-macrocalc.herokuapp.com/usermetrics/add/{username} | addUserMetricsByUserName
+[**Delete User Metrics By User Metrics ID - DELETE**] | **DELETE** https://buildweek-macrocalc.herokuapp.com/usermetrics/delete/{usermetricsid} | deleteMetrics
+[**Update User Metrics By User Metrics ID - PUT**] | **PUT** https://buildweek-macrocalc.herokuapp.com/usermetrics/edit/{usermetricsid} | updateMetrics
 
 
 ## **Add New User - POST**
