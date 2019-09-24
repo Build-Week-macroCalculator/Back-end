@@ -35,7 +35,9 @@ Method | HTTP request | Description
 
 ## **Add New User - POST**
 
-Sign up a new user with this endpoint. Upon successful submission, reroute to login to receive your token. Pass in the username and passwords with the keys "username" and "password" respectively.
+Sign up a new user with this endpoint. Upon successful submission, reroute to login to receive your token. Pass in the username and passwords with the keys "username" and "password" respectively. Schema below:
+
+ {"username": <USERNAME>, "password": <PASSWORD>}
 
 ### HTTP request headers
 
