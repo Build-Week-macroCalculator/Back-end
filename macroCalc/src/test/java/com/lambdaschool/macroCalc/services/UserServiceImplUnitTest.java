@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.services;
+package com.lambdaschool.macroCalc.services;
 
 import com.lambdaschool.macroCalc.StartHereApplication;
 import com.lambdaschool.macroCalc.exceptions.ResourceFoundException;
@@ -6,7 +6,6 @@ import com.lambdaschool.macroCalc.exceptions.ResourceNotFoundException;
 import com.lambdaschool.macroCalc.models.Role;
 import com.lambdaschool.macroCalc.models.User;
 import com.lambdaschool.macroCalc.models.UserRoles;
-import com.lambdaschool.macroCalc.services.UserService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -82,7 +81,7 @@ public class UserServiceImplUnitTest
     @Test
     public void D_delete()
     {
-        userService.delete(13);
+        userService.delete(7);
         assertEquals(4, userService.findAll().size());
     }
 
@@ -133,39 +132,6 @@ public class UserServiceImplUnitTest
 
     }
 
-    @Transactional
-    @WithUserDetails("cinnamon")
-    @Test
-    public void G_update()
-    {
-        ArrayList<UserRoles> datas = new ArrayList<>();
-        User u2 = new User("cinnamon", "password", datas);
-
-        User updatedu2 = userService.update(u2, 7, false);
-
-        System.out.println("*** DATA ***");
-        System.out.println(updatedu2);
-        System.out.println("*** DATA ***");
-    }
-
-    @Transactional
-    @WithUserDetails("cinnamon")
-    @Test (expected = ResourceFoundException.class)
-    public void GA_updateWithUserRole()
-    {
-        Role r2 = new Role("user");
-
-        ArrayList<UserRoles> datas = new ArrayList<>();
-        User u2 = new User("cinnamon", "password", datas);
-        datas.add(new UserRoles(u2, r2));
-
-        User updatedu2 = userService.update(u2, 7, false);
-
-        System.out.println("*** DATA ***");
-        System.out.println(updatedu2);
-        System.out.println("*** DATA ***");
-
-    }
 
     @Transactional
     @WithUserDetails("cinnamon")
@@ -204,18 +170,6 @@ public class UserServiceImplUnitTest
         userService.deleteUserRole(50, 2);
     }
 
-    @Test(expected = ResourceFoundException.class)
-    public void IA_addUserRoleUserRoleFound()
-    {
-        userService.addUserRole(11, 1);
-    }
-
-    @Test
-    public void IB_deleteUserRole()
-    {
-        userService.deleteUserRole(11, 1);
-    }
-
     @Test(expected = ResourceNotFoundException.class)
     public void IC_addUserRoleRoleNotFound()
     {
@@ -228,9 +182,4 @@ public class UserServiceImplUnitTest
         userService.addUserRole(50, 2);
     }
 
-    @Test
-    public void IE_addUserRole()
-    {
-        userService.addUserRole(11, 2);
-    }
 }

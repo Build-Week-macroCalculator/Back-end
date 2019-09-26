@@ -9,8 +9,6 @@ public interface UsermetricsService {
 
     Usermetrics findUserMetricsById(long id);
 
-    List<Usermetrics> findByUserName(String username);
-
     void delete(long id);
 
     Usermetrics save(Usermetrics usermetrics);

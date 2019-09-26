@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere.controllers;
+package com.lambdaschool.macroCalc.controllers;
 
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -78,24 +78,24 @@ public class UserControllerIntegrationTest
                .time(lessThan(5000L));
     }
 
-    @WithUserDetails("testbarn")
+    @WithUserDetails("admin")
     @Test
     public void B_getAllUsers() throws Exception
     {
         this.mockMvc.perform(get("/users/users"))
                     .andDo(print())
                     .andExpect(status().isOk())
-                    .andExpect(content().string(containsString("testbarn")));
+                    .andExpect(content().string(containsString("admin")));
     }
 
     @WithUserDetails("testbarn")
     @Test
     public void C_getUserById() throws Exception
     {
-        this.mockMvc.perform(get("/users/user/{userid}", 14))
+        this.mockMvc.perform(get("/users/user/{userid}", 7))
                     .andDo(print())
                     .andExpect(status().isOk())
-                    .andExpect(content().string(containsString("testdog")));
+                    .andExpect(content().string(containsString("testcat")));
     }
 
     @WithUserDetails("testbarn")
@@ -112,17 +112,17 @@ public class UserControllerIntegrationTest
     @Test
     public void D_getUserByName() throws Exception
     {
-        this.mockMvc.perform(get("/users/user/name/{userName}", "testcat"))
+        this.mockMvc.perform(get("/users/username/{userName}", "testbarn"))
                     .andDo(print())
                     .andExpect(status().isOk())
-                    .andExpect(content().string(containsString("testcat")));
+                    .andExpect(content().string(containsString("testbarn")));
     }
 
-    @WithUserDetails("testbarn")
+    @WithUserDetails("admin")
     @Test
     public void DA_getUserByNameNotFound() throws Exception
     {
-        this.mockMvc.perform(get("/users/user/name/{userName}", "rabbit"))
+        this.mockMvc.perform(get("/users/username/{userName}", "lizard"))
                     .andDo(print())
                     .andExpect(status().is4xxClientError())
                     .andExpect(content().string(containsString("ResourceNotFoundException")));
@@ -138,7 +138,7 @@ public class UserControllerIntegrationTest
                     .andExpect(content().string(containsString("testdog")));
     }
 
-    @WithUserDetails("testbarn")
+    @WithUserDetails("admin")
     @Test
     public void F_givenPostAUser() throws Exception
     {
@@ -156,7 +156,7 @@ public class UserControllerIntegrationTest
     @Test
     public void G_deleteUserById() throws Exception
     {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/users/user/{id}", 13))
+        mockMvc.perform(MockMvcRequestBuilders.delete("/users/user/{id}", 7))
                .andDo(print())
                .andExpect(status().is2xxSuccessful());
     }
