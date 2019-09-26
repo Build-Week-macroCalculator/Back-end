@@ -1,7 +1,6 @@
-package com.lambdaschool.starthere.controllers;
+package com.lambdaschool.macroCalc.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lambdaschool.macroCalc.controllers.UserController;
 import com.lambdaschool.macroCalc.models.Role;
 import com.lambdaschool.macroCalc.models.User;
 import com.lambdaschool.macroCalc.models.UserRoles;
@@ -171,16 +170,17 @@ public class UserControllerUnitTest
     @Test
     public void getUserByName() throws Exception
     {
-        String apiUrl = "/users/user/name/testing";
+        String apiUrl = "/users/username/testing";
 
-        Mockito.when(userService.findByName("testing")).thenReturn(userList.get(0));
+        Mockito.when(userService.findByName("testing")).thenReturn(userList.get(1));
 
         RequestBuilder rb = MockMvcRequestBuilders.get(apiUrl).accept(MediaType.APPLICATION_JSON);
         MvcResult r = mockMvc.perform(rb).andReturn(); // this could throw an exception
         String tr = r.getResponse().getContentAsString();
 
+
         ObjectMapper mapper = new ObjectMapper();
-        String er = mapper.writeValueAsString(userList.get(0));
+        String er = mapper.writeValueAsString(userList.get(1));
 
         System.out.println("Expect: " + er);
         System.out.println("Actual: " + tr);

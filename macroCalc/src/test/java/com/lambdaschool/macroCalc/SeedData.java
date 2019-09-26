@@ -1,10 +1,14 @@
-package com.lambdaschool.starthere;
+package com.lambdaschool.macroCalc;
 
 import com.lambdaschool.macroCalc.models.Role;
 import com.lambdaschool.macroCalc.models.User;
 import com.lambdaschool.macroCalc.models.UserRoles;
+import com.lambdaschool.macroCalc.models.Usermetrics;
+import com.lambdaschool.macroCalc.repository.UsermetricsRepository;
 import com.lambdaschool.macroCalc.services.RoleService;
 import com.lambdaschool.macroCalc.services.UserService;
+import com.lambdaschool.macroCalc.services.UsermetricsService;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -21,6 +25,9 @@ public class SeedData implements CommandLineRunner
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    UsermetricsService umService;
 
 
     @Override
@@ -63,14 +70,19 @@ public class SeedData implements CommandLineRunner
         users = new ArrayList<>();
         users.add(new UserRoles(new User(), r2));
         User u5 = new User("testdog", "password", users);
+        u5.getUsermetrics()
+                .add(new Usermetrics(u5, "male", 25, "72", 210, "1-2 per week", "Lose weight moderately", "3 meals a day"));
+        u5.getUsermetrics()
+                .add(new Usermetrics(u5, "male", 25, "72", 210, "1-2 per week", "Lose weight moderately", "3 meals a day"));
         u5 = userService.save(u5);
 
         System.out.println("\n*** Seed Data ***");
         System.out.println(u1);
         System.out.println(u2);
         System.out.println(u3);
-        System.out.println(u4);
-        System.out.println(u5);
+        for (Usermetrics um : u5.getUsermetrics()) {
+            System.out.println(um.getUsermetricsid());
+        }
         System.out.println("*** Seed Data ***\n");
     }
 }

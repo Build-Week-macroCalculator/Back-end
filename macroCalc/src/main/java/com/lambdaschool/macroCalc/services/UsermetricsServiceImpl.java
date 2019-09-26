@@ -31,12 +31,7 @@ public class UsermetricsServiceImpl implements UsermetricsService {
     @Override
     public Usermetrics findUserMetricsById(long id) {
         return usermetricsrepo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Useremail with id " + id + " Not Found!"));
-    }
-
-    @Override
-    public List<Usermetrics> findByUserName(String username) {
-        return usermetricsrepo.findAllByUser_Username(username);
+                .orElseThrow(() -> new ResourceNotFoundException("Usermetrics with id " + id + " Not Found!"));
     }
 
     @Override
@@ -59,7 +54,7 @@ public class UsermetricsServiceImpl implements UsermetricsService {
             }
         } else
         {
-            throw new ResourceNotFoundException("Useremail with id " + id + " Not Found!");
+            throw new ResourceNotFoundException("Usermetrics with id " + id + " Not Found!");
         }
     }
 

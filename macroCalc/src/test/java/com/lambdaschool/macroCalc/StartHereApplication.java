@@ -1,4 +1,4 @@
-package com.lambdaschool.starthere;
+package com.lambdaschool.macroCalc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,14 +9,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableWebMvc
 // @EnableJpaAuditing
 @SpringBootApplication
 public class StartHereApplication
 {
-    private static final Logger logger = LoggerFactory.getLogger(com.lambdaschool.starthere.StartHereApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(com.lambdaschool.macroCalc.StartHereApplication.class);
     private static boolean stop = false;
 
     @Autowired
@@ -38,7 +37,7 @@ public class StartHereApplication
 
         if (!stop)
         {
-            ApplicationContext ctx = SpringApplication.run(com.lambdaschool.starthere.StartHereApplication.class, args);
+            ApplicationContext ctx = SpringApplication.run(com.lambdaschool.macroCalc.StartHereApplication.class, args);
 
             DispatcherServlet dispatcherServlet = (DispatcherServlet) ctx.getBean("dispatcherServlet");
             dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
